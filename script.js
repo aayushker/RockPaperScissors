@@ -77,6 +77,38 @@ function play(button){
         // Call the main function
         main(idButton);
     }, 1200); // Delay for 2 seconds
+
+    let userChoice = document.getElementById('userChoice');
+    let computerChoice = document.getElementById('computerChoice');
+    let playerScore = document.getElementById('playerScore');
+    let computerScore = document.getElementById('computerScore');
+
+    // Clear previous images
+    userChoice.innerHTML = '';
+    computerChoice.innerHTML = '';
+
+    // Create image for user's choice
+    let userImg = document.createElement('img');
+    userImg.src = './assets/' + idButton + '.jpg'; // replace with actual image file path
+    userImg.style.width = '100px';
+    userImg.style.height = '100px';
+    userChoice.appendChild(userImg); // append the image to the userChoice element
+
+    // Create image for computer's choice
+    let computerImg = document.createElement('img');
+    computerImg.src = './assets/' + compChoice + '.jpg'; // replace with actual image file path
+    computerImg.style.width = '100px';
+    computerImg.style.height = '100px';
+    computerChoice.appendChild(computerImg); // append the image to the computerChoice element
+
+    // Update scores
+    playerScore.textContent = "Player Score: " + playerScore.textContent;
+    computerScore.textContent = "Computer Score: " + computerScore.textContent;
+}
+
+function playAgain(){
+    reset();
+    displayScore();
 }
 
 function reset(){
