@@ -35,7 +35,6 @@ function main( userChoice){
    }
    console.log("Player Score: " + playerScore);
    console.log("Computer Score: " + computerScore);
-
 }
 
 function randomSelect(){
@@ -56,5 +55,33 @@ function randomSelect(){
 
 function play(button){
     let idButton = button.id;
-    main(idButton);
+    let image = document.getElementById('rotatingImage');
+    let rock = document.getElementById('rock');
+    let paper = document.getElementById('paper');
+    let scissors = document.getElementById('scissors');
+    
+    // Hide all images
+    rock.style.display = 'none';
+    paper.style.display = 'none';
+    scissors.style.display = 'none';
+    // Display the image and start rotation
+    image.style.display = 'block';
+    
+    // Delay the call to main function
+    setTimeout(function() {
+        // Hide the image
+        image.style.display = 'none';
+        rock.style.display = 'block';
+        paper.style.display = 'block';
+        scissors.style.display = 'block';
+        // Call the main function
+        main(idButton);
+    }, 1200); // Delay for 2 seconds
+}
+
+function reset(){
+    playerScore = 0;
+    computerScore = 0;
+    console.log("Player Score: " + playerScore);
+    console.log("Computer Score: " + computerScore);
 }

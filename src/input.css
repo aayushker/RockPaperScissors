@@ -7,6 +7,7 @@ html{
 }
 body{
     background-color: black;
+    cursor: url("/assets/flame.png"), auto;
 }
 
 .container{
@@ -30,3 +31,27 @@ body{
     border-radius: 10%;
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#rotatingImage {
+    mix-blend-mode: screen;
+    animation: rotate 1.2s linear infinite;
+    height: 200px;
+    width: 200px;;
+}
+
+.reset{
+    background-color: red;
+    color: white;
+}
+
+.reset:hover{
+    background-color: #3e8e41;
+}
