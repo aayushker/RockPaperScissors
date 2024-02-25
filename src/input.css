@@ -6,24 +6,23 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: black;
+    /* background-color: white; */
     /* cursor: url("/assets/flame.png"), auto; */
 }
 
-.container{
+.containers{
     display: flex;
     justify-content: space-evenly;
     align-items: space-evenly;
     margin-top: 3vh;
-    margin-left: 9vw;
     width: 100%;
     margin-right: 0%;
     padding-right: 0%;
 }
 
 .main{
-    /* padding: 0%;
-    margin: 0%; */
+    padding: 0%;
+    margin: 0%;
 } 
 
 .rock, .paper, .scissors{
@@ -75,11 +74,12 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh;;
+    margin-top: 2vh;
     font-size: 50px;
     font-family: 'Press Start 2P', cursive;
-    color:white;
+    color: white;
     text-shadow: 2px 2px 4px #4CAF50;
+    white-space: nowrap;
 }
 
 h2{
