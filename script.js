@@ -40,7 +40,7 @@ function randomSelect() {
         case 2:
             return "scissors";
         default:
-            throw new Error("Unexpected value in randomSelect");
+            throw new Error("Fatal Error!");
     }
 }
 
@@ -76,7 +76,6 @@ function play(button) {
     userImg.src = './assets/' + idButton + '.jpg';
     userImg.style.width = '100px';
     userImg.style.height = '100px';
-    
     userChoiceElement.appendChild(userImg);
 
     const compChoice = randomSelect();

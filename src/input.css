@@ -20,16 +20,25 @@ body{
     padding-right: 0%;
 }
 
-.main{
-    padding: 0%;
-    margin: 0%;
-} 
-
-.rock, .paper, .scissors{
+.rock, .paper, .scissors {
     width: 200px;
     height: 200px;
     border-radius: 10%;
+    transition-duration: 0.4s;
 }
+
+.rock:hover, .paper:hover, .scissors:hover {
+    transform: scale(1.1);
+}
+
+.rock:active, .paper:active, .scissors:active {
+    transform: scale(0.9);
+}
+
+.rock, .paper{
+    margin-right: 2px;
+}
+
 
 @keyframes rotate {
     from {
@@ -74,23 +83,35 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh;
-    font-size: 50px;
+    margin-top: 1vh;
+    font-size: 6vw;
+    text-shadow: none;
     font-family: 'Press Start 2P', cursive;
-    color: white;
-    text-shadow: 2px 2px 4px #4CAF50;
-    white-space: nowrap;
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 h2{
     margin-top: 2vh;;
     font-size: 50px;
     color:white;
-    text-shadow: 2px 2px 4px #4CAF50;
 }
 
-#computerScore, #userScore{
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
+.cont{
+    margin-left: 2vw;
+}
+
+#yourc, #compc{
+    display: flex;
+    
+}
+
+#yourp, #compp{
+    color: whitesmoke;
+    margin: 10px;
+}
+
+#yourc{
+    margin-bottom: 1vh;
 }
