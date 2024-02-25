@@ -28,6 +28,12 @@ function main(userChoice) {
     }
     console.log("Player Score: " + playerScore);
     console.log("Computer Score: " + computerScore);
+
+    const playerScoreElement = document.getElementById('playerScore');
+    const computerScoreElement = document.getElementById('computerScore');
+
+    playerScoreElement.textContent = "Player Score: " + playerScore;
+    computerScoreElement.textContent = "Computer Score: " + computerScore;
 }
 
 function randomSelect() {
@@ -66,8 +72,7 @@ function play(button) {
 
     const userChoiceElement = document.getElementById('userChoice');
     const computerChoiceElement = document.getElementById('computerChoice');
-    const playerScoreElement = document.getElementById('playerScore');
-    const computerScoreElement = document.getElementById('computerScore');
+    
 
     userChoiceElement.innerHTML = '';
     computerChoiceElement.innerHTML = '';
@@ -85,8 +90,7 @@ function play(button) {
     computerImg.style.height = '100px';
     computerChoiceElement.appendChild(computerImg);
 
-    playerScoreElement.textContent = "Player Score: " + playerScore;
-    computerScoreElement.textContent = "Computer Score: " + computerScore;
+
 }
 
 function reset() {
