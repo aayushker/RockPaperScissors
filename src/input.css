@@ -52,8 +52,8 @@ body{
 #rotatingImage {
     mix-blend-mode: screen;
     animation: rotate 1.2s linear infinite;
-    height: 200px;
-    width: 200px;;
+    height: auto;
+    width: 12vw;
 }
 
 #reset{
@@ -123,4 +123,11 @@ h2{
     text-shadow: none;
     text-decoration: underline ;
 
+}
+
+#playerScore, #computerScore{
+    font-size: 2vw;
+    color:white;
+    text-shadow: none;
+    width: 100%;
 }

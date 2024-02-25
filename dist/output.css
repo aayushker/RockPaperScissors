@@ -874,7 +874,7 @@ h2{
 
 #computerScore, #userScore{
   width: 200px;
-  height: 200px;
+  /* height: 200px; */
   border-radius: 10%;
 }
 

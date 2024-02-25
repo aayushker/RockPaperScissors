@@ -89,14 +89,12 @@ function play(button) {
     computerScoreElement.textContent = "Computer Score: " + computerScore;
 }
 
-function playAgain() {
-    reset();
-    displayScore();
-}
-
 function reset() {
     playerScore = 0;
     computerScore = 0;
-    console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
+    const playerScoreElement = document.getElementById('playerScore');
+    const computerScoreElement = document.getElementById('computerScore');
+    playerScoreElement.textContent = "Player Score: " + playerScore;
+    computerScoreElement.textContent = "Computer Score: " + computerScore;
 }
+
