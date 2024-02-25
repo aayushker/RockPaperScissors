@@ -1,117 +1,100 @@
 let playerScore = 0;
 let computerScore = 0;
 
-function main( userChoice){
-   compChoice = randomSelect();
-   if (userChoice === compChoice){
+function main(userChoice) {
+    const compChoice = randomSelect();
+    if (userChoice === compChoice) {
         console.log("Tie!");
-   }
-   else if (userChoice === "rock" && compChoice === "scissors"){
+    } else if (userChoice === "rock" && compChoice === "scissors") {
         console.log("You win!");
         playerScore++;
-   }
-   else if (userChoice === "rock" && compChoice === "paper"){
+    } else if (userChoice === "rock" && compChoice === "paper") {
         console.log("You lose!");
         computerScore++;
-   }
-   else if (userChoice === "paper" && compChoice === "rock"){
+    } else if (userChoice === "paper" && compChoice === "rock") {
         console.log("You win!");
         playerScore++;
-   }
-   else if (userChoice === "paper" && compChoice === "scissors"){
+    } else if (userChoice === "paper" && compChoice === "scissors") {
         console.log("You lose!");
         computerScore++;
-   }
-   else if (userChoice === "scissors" && compChoice === "paper"){
+    } else if (userChoice === "scissors" && compChoice === "paper") {
         console.log("You win!");
         playerScore++;
-   }
-   else if (userChoice === "scissors" && compChoice === "rock"){
+    } else if (userChoice === "scissors" && compChoice === "rock") {
         console.log("You lose!");
         computerScore++;
-   }
-   else{
+    } else {
         console.log("Fatal Error!");
-   }
-   console.log("Player Score: " + playerScore);
-   console.log("Computer Score: " + computerScore);
+    }
+    console.log("Player Score: " + playerScore);
+    console.log("Computer Score: " + computerScore);
 }
 
-function randomSelect(){
-    const n = Math.floor(Math.random()*3);
-    if (n == 0 ){
-        return "rock";
-    }
-    else if (n == 1){
-        return "paper";
-    }
-    else if (n == 2){
-        return "scissors";
-    }
-    else{
-        return "Fatal Error!"
+function randomSelect() {
+    const n = Math.floor(Math.random() * 3);
+    switch (n) {
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
+        default:
+            throw new Error("Unexpected value in randomSelect");
     }
 }
 
-function play(button){
-    let idButton = button.id;
-    let image = document.getElementById('rotatingImage');
-    let rock = document.getElementById('rock');
-    let paper = document.getElementById('paper');
-    let scissors = document.getElementById('scissors');
-    
-    // Hide all images
+function play(button) {
+    const idButton = button.id;
+    const image = document.getElementById('rotatingImage');
+    const rock = document.getElementById('rock');
+    const paper = document.getElementById('paper');
+    const scissors = document.getElementById('scissors');
+
     rock.style.display = 'none';
     paper.style.display = 'none';
     scissors.style.display = 'none';
-    // Display the image and start rotation
     image.style.display = 'block';
-    
-    // Delay the call to main function
-    setTimeout(function() {
-        // Hide the image
+
+    setTimeout(function () {
         image.style.display = 'none';
         rock.style.display = 'block';
         paper.style.display = 'block';
         scissors.style.display = 'block';
-        // Call the main function
         main(idButton);
-    }, 1200); // Delay for 2 seconds
+    }, 1200);
 
-    let userChoice = document.getElementById('userChoice');
-    let computerChoice = document.getElementById('computerChoice');
-    let playerScore = document.getElementById('playerScore');
-    let computerScore = document.getElementById('computerScore');
+    const userChoiceElement = document.getElementById('userChoice');
+    const computerChoiceElement = document.getElementById('computerChoice');
+    const playerScoreElement = document.getElementById('playerScore');
+    const computerScoreElement = document.getElementById('computerScore');
 
-    // Clear previous images
-    userChoice.innerHTML = '';
-    computerChoice.innerHTML = '';
+    userChoiceElement.innerHTML = '';
+    computerChoiceElement.innerHTML = '';
 
-    // Create image for user's choice
-    let userImg = document.createElement('img');
-    userImg.src = './assets/' + idButton + '.jpg'; // replace with actual image file path
+    const userImg = document.createElement('img');
+    userImg.src = './assets/' + idButton + '.jpg';
     userImg.style.width = '100px';
     userImg.style.height = '100px';
-    userChoice.appendChild(userImg); // append the image to the userChoice element
+    userChoiceElement.appendChild(userImg);
 
-    // Create image for computer's choice
-    let computerImg = document.createElement('img');
-    computerImg.src = './assets/' + compChoice + '.jpg'; // replace with actual image file path
+    const compChoice = randomSelect();
+    const computerImg = document.createElement('img');
+    computerImg.src = './assets/' + compChoice + '.jpg';
     computerImg.style.width = '100px';
     computerImg.style.height = '100px';
-    computerChoice.appendChild(computerImg); // append the image to the computerChoice element
+    computerChoiceElement.appendChild(computerImg);
 
-    // Update scores
-    playerScore.textContent = "Player Score: " + playerScore.textContent;
-    computerScore.textContent = "Computer Score: " + computerScore.textContent;
+    playerScoreElement.textContent = "Player Score: " + playerScore;
+    computerScoreElement.textContent = "Computer Score: " + computerScore;
 }
 
-function playAgain(){
+function playAgain() {
     reset();
     displayScore();
 }
 
-function reset(){
+function reset() {
     playerScore = 0;
     computerScore = 0;
     console.log("Player Score: " + playerScore);
