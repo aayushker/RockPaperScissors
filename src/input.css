@@ -2,15 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+@use postcss-preset-env {
+    stage: 0;
+}
+
+:root {
+    --color-background: #000119;
+    --stroke-width: calc(1em / 16);
+    --font-size: 30vmin;
+    --font-weight: 700;
+    --letter-spacing: calc(1em / 8);
+}
+
+html {
     scroll-behavior: smooth;
 }
-body{
+
+body {
     /* background-color: white; */
     /* cursor: url("/assets/flame.png"), auto; */
 }
 
-.containers{
+.containers {
     display: flex;
     justify-content: space-evenly;
     align-items: space-evenly;
@@ -20,7 +33,9 @@ body{
     padding-right: 0%;
 }
 
-.rock, .paper, .scissors {
+.rock,
+.paper,
+.scissors {
     margin-top: 0vw;
     width: 12vw;
     height: auto;
@@ -28,15 +43,20 @@ body{
     transition-duration: 0.4s;
 }
 
-.rock:hover, .paper:hover, .scissors:hover {
+.rock:hover,
+.paper:hover,
+.scissors:hover {
     transform: scale(1.1);
 }
 
-.rock:active, .paper:active, .scissors:active {
+.rock:active,
+.paper:active,
+.scissors:active {
     transform: scale(0.9);
 }
 
-.rock, .paper{
+.rock,
+.paper {
     margin-right: 2px;
 }
 
@@ -45,6 +65,7 @@ body{
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -57,7 +78,7 @@ body{
     width: auto;
 }
 
-#reset{
+#reset {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,11 +97,12 @@ body{
     cursor: pointer;
     transition-duration: 0.4s;
 }
-#reset:hover{
+
+#reset:hover {
     background-color: #3e8e41;
 }
 
-h1{
+h1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,47 +110,67 @@ h1{
     font-size: 6vw;
     text-shadow: none;
     font-family: 'Press Start 2P', cursive;
-    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
-h2{
+h2 {
     margin-top: 1vh;
     font-size: 50px;
-    color:white;
+    color: white;
 }
 
-.cont{
+.cont {
     margin-left: 2vw;
-}
-
-#yourc, #compc{
     display: flex;
-    
+    justify-content: space-between;
+    align-items: center;
 }
 
-#yourp, #compp{
+#yourc,
+#compc {
+    display: flex;
+
+}
+
+#yourp,
+#compp {
     color: whitesmoke;
     margin: 10px;
 }
 
-#yourc{
-    margin-bottom: 1vh; 
+#yourc {
+    margin-bottom: 1vh;
 }
 
-#resulth2{
+#resulth2 {
     margin-top: 1vh;
     font-size: 3vw;
-    color:white;
+    color: white;
     text-shadow: none;
-    text-decoration: underline ;
+    text-decoration: underline;
 
 }
 
-#playerScore, #computerScore{
+#playerScore,
+#computerScore {
     font-size: 2vw;
-    color:white;
+    color: white;
     text-shadow: none;
     width: 100%;
+}
+
+.popuptext {
+    font-size: 5vw;
+    text-shadow: none;
+    margin-right: 30vw;
+    background-clip: text;
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color: var(--color-background);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
 }

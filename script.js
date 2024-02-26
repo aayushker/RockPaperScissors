@@ -5,28 +5,37 @@ let computerScore = 0;
 function main(userChoice) {
     const compChoice = randomSelect();
     const idButton = userChoice;
+    var pop = "";
     if (userChoice === compChoice) {
         console.log("Tie!");
+        pop = "tie";
     } else if (userChoice === "rock" && compChoice === "scissors") {
         console.log("You win!");
+        pop = "win";
         playerScore++;
     } else if (userChoice === "rock" && compChoice === "paper") {
         console.log("You lose!");
+        pop = "lose";
         computerScore++;
     } else if (userChoice === "paper" && compChoice === "rock") {
         console.log("You win!");
+        pop = "win";
         playerScore++;
     } else if (userChoice === "paper" && compChoice === "scissors") {
         console.log("You lose!");
+        pop = "lose";
         computerScore++;
     } else if (userChoice === "scissors" && compChoice === "paper") {
         console.log("You win!");
+        pop = "win";
         playerScore++;
     } else if (userChoice === "scissors" && compChoice === "rock") {
         console.log("You lose!");
+        pop = "lose";
         computerScore++;
     } else {
         console.log("Fatal Error!");
+        pop = "error";
     }
     console.log("Player Score: " + playerScore);
     console.log("Computer Score: " + computerScore);
@@ -36,6 +45,8 @@ function main(userChoice) {
 
     playerScoreElement.textContent = "Player Score: " + playerScore;
     computerScoreElement.textContent = "Computer Score: " + computerScore;
+
+    popup(pop);
 
     const userChoiceElement = document.getElementById('userChoice');
     const computerChoiceElement = document.getElementById('computerChoice');
@@ -103,4 +114,25 @@ function reset() {
     playerScoreElement.textContent = "Player Score: " + playerScore;
     computerScoreElement.textContent = "Computer Score: " + computerScore;
     console.clear();
+}
+
+function popup(pop){
+    const popText = document.getElementById('myPopup');
+    if (pop === "win") {
+        popText.innerHTML = "You win!";
+        // alert("You win!");
+    } else if (pop === "lose") {
+        popText.innerHTML = "You lose!";
+        // alert("You lose!");
+    } else if (pop === "tie") {
+        popText.innerHTML = "It's a Tie!";
+        // alert("Tie!");
+    } else if (pop === "error") {
+        popText.innerHTML = "Fatal Error!";
+        // alert("Fatal Error!");
+    }
+    else{
+        popText.innerHTML = "Fatal Error!";
+        // alert("Fatal Error!");
+    }
 }
