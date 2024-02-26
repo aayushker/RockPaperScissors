@@ -1,8 +1,10 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
 function main(userChoice) {
     const compChoice = randomSelect();
+    const idButton = userChoice;
     if (userChoice === compChoice) {
         console.log("Tie!");
     } else if (userChoice === "rock" && compChoice === "scissors") {
@@ -34,16 +36,38 @@ function main(userChoice) {
 
     playerScoreElement.textContent = "Player Score: " + playerScore;
     computerScoreElement.textContent = "Computer Score: " + computerScore;
+
+    const userChoiceElement = document.getElementById('userChoice');
+    const computerChoiceElement = document.getElementById('computerChoice');
+    
+    userChoiceElement.innerHTML = '';
+    computerChoiceElement.innerHTML = '';
+
+    const userImg = document.createElement('img');
+    userImg.src = './assets/' + idButton + '.jpg';
+    userImg.style.width = '5vw';
+    userImg.style.height = '5vw';
+    userChoiceElement.appendChild(userImg);
+
+    const computerImg = document.createElement('img');
+    computerImg.src = './assets/' + compChoice + '.jpg';
+    computerImg.style.width = '5vw';
+    computerImg.style.height = '5vw';
+    computerChoiceElement.appendChild(computerImg);
 }
 
 function randomSelect() {
     const n = Math.floor(Math.random() * 3);
+    console.log(n);
     switch (n) {
-        case 0:
+        case 0:            
+            // console.log("rock");
             return "rock";
         case 1:
+            // console.log("paper");
             return "paper";
         case 2:
+            // console.log("scissors");
             return "scissors";
         default:
             throw new Error("Fatal Error!");
@@ -69,28 +93,6 @@ function play(button) {
         scissors.style.display = 'block';
         main(idButton);
     }, 1200);
-
-    const userChoiceElement = document.getElementById('userChoice');
-    const computerChoiceElement = document.getElementById('computerChoice');
-    
-
-    userChoiceElement.innerHTML = '';
-    computerChoiceElement.innerHTML = '';
-
-    const userImg = document.createElement('img');
-    userImg.src = './assets/' + idButton + '.jpg';
-    userImg.style.width = '100px';
-    userImg.style.height = '100px';
-    userChoiceElement.appendChild(userImg);
-
-    const compChoice = randomSelect();
-    const computerImg = document.createElement('img');
-    computerImg.src = './assets/' + compChoice + '.jpg';
-    computerImg.style.width = '100px';
-    computerImg.style.height = '100px';
-    computerChoiceElement.appendChild(computerImg);
-
-
 }
 
 function reset() {
@@ -100,5 +102,5 @@ function reset() {
     const computerScoreElement = document.getElementById('computerScore');
     playerScoreElement.textContent = "Player Score: " + playerScore;
     computerScoreElement.textContent = "Computer Score: " + computerScore;
+    console.clear();
 }
-

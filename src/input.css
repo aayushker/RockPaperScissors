@@ -14,13 +14,14 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: space-evenly;
-    margin-top: 2vh;
+    margin-top: 0vh;
     width: 100%;
     margin-right: 0%;
     padding-right: 0%;
 }
 
 .rock, .paper, .scissors {
+    margin-top: 0vw;
     width: 12vw;
     height: auto;
     border-radius: 10%;
@@ -52,8 +53,8 @@ body{
 #rotatingImage {
     mix-blend-mode: screen;
     animation: rotate 1.2s linear infinite;
-    height: auto;
-    width: 12vw;
+    height: 34.6vh;
+    width: auto;
 }
 
 #reset{
@@ -83,7 +84,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.1vh;
+    margin-top: 0vh;
     font-size: 6vw;
     text-shadow: none;
     font-family: 'Press Start 2P', cursive;
@@ -93,7 +94,7 @@ h1{
 }
 
 h2{
-    margin-top: 2vh;
+    margin-top: 1vh;
     font-size: 50px;
     color:white;
 }
@@ -113,11 +114,11 @@ h2{
 }
 
 #yourc{
-    margin-bottom: 1vh;
+    margin-bottom: 1vh; 
 }
 
 #resulth2{
-    margin-top: 2vh;
+    margin-top: 1vh;
     font-size: 3vw;
     color:white;
     text-shadow: none;
