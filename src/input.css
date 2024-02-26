@@ -18,9 +18,22 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    /* background-color: white; */
-    /* cursor: url("/assets/flame.png"), auto; */
+/* body {
+    background-color: white;
+    cursor: url("/assets/flame.png"), auto;
+} */
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0vh;
+    font-size: 6vw;
+    text-shadow: none;
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 .containers {
@@ -60,6 +73,12 @@ body {
     margin-right: 2px;
 }
 
+#rotatingImage {
+    mix-blend-mode: screen;
+    animation: rotate 1.2s linear infinite;
+    height: 34.6vh;
+    width: auto;
+}
 
 @keyframes rotate {
     from {
@@ -71,11 +90,49 @@ body {
     }
 }
 
-#rotatingImage {
-    mix-blend-mode: screen;
-    animation: rotate 1.2s linear infinite;
-    height: 34.6vh;
-    width: auto;
+.cont {
+    margin-left: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#resulth2 {
+    margin-top: 1vh;
+    font-size: 3vw;
+    color: white;
+    text-shadow: none;
+    text-decoration: underline;
+
+}
+
+h2 {
+    margin-top: 1vh;
+    font-size: 50px;
+    color: white;
+}
+
+#yourc,
+#compc {
+    display: flex;
+}
+
+#yourp,
+#compp {
+    color: whitesmoke;
+    margin: 10px;
+}
+
+#yourc {
+    margin-bottom: 1vh;
+}
+
+#playerScore,
+#computerScore {
+    font-size: 2vw;
+    color: white;
+    text-shadow: none;
+    width: 100%;
 }
 
 #reset {
@@ -100,65 +157,6 @@ body {
 
 #reset:hover {
     background-color: #3e8e41;
-}
-
-h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0vh;
-    font-size: 6vw;
-    text-shadow: none;
-    font-family: 'Press Start 2P', cursive;
-    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-h2 {
-    margin-top: 1vh;
-    font-size: 50px;
-    color: white;
-}
-
-.cont {
-    margin-left: 2vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#yourc,
-#compc {
-    display: flex;
-
-}
-
-#yourp,
-#compp {
-    color: whitesmoke;
-    margin: 10px;
-}
-
-#yourc {
-    margin-bottom: 1vh;
-}
-
-#resulth2 {
-    margin-top: 1vh;
-    font-size: 3vw;
-    color: white;
-    text-shadow: none;
-    text-decoration: underline;
-
-}
-
-#playerScore,
-#computerScore {
-    font-size: 2vw;
-    color: white;
-    text-shadow: none;
-    width: 100%;
 }
 
 .popuptext {
